@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM_HTML5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <div class="logo"> <img src="./img/logo360.png" alt="logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">VỀ CHÚNG TÔI</a></li>
+            <li><a href="Product.html">BỘ SƯU TẬP</a></li>
+            <li><a href="News.html">TIN TỨC</a></li>
+            <li><a href="ProductSale.html">SALE</a></li>
+            <li><a href="About.html">HỆ THÔNG CỬA HÀNG</a></li>
+        </ul>
+    </nav>
+    
+    <div class="contact">
+        <p>TƯ VẤN MUA HÀNG: <a href=#>0868.986.239</a></p>
+        <input type="text" placeholder="Search...">
+    </div>
+</header>
+
+<div class="brand-banner">
+    <h1>THƯƠNG HIỆU THỜI TRANG 360<sup>®</sup></h1>
+    <div class="banner-image">
+      <img src="./img/banner2jpg.jpg" alt="Thương hiệu thời trang 360">
+    </div>
+    <p class="brand-description">Chúng tôi tin rằng mỗi bạn trẻ là một phiên bản độc đáo và duy nhất.</p>
+  </div>
+
+
+
+  <!-- Bản Đồ -->
+  <div class="containermap">
+
+    <canvas id="mapCanvas" width="600" height="400"></canvas>
+
+
+    <div class="store-list">
+        <h3>Store List</h3>
+        <ul>
+            <li><span>18 Chùa Bộc</span><br>Đống Đa, Hà Nội<br>0975056360</li>
+            <li><span>214 Trần Phú</span><br>Từ Sơn, Bắc Ninh<br>0344089838</li>
+            <li><span>11 Đường Quang Hàm</span><br>Cầu Giấy, Hà Nội<br>0961829615</li>
+            <li><span>272 Tô Hiệu</span><br>Lê Chân, Hải Phòng<br>0971624938</li>
+            
+        </ul>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('mapCanvas');
+    const ctx = canvas.getContext('2d');
+
+    
+    ctx.fillStyle = "#e6f7ff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    
+    const markers = [
+        { x: 150, y: 100, label: "Hà Nội" },
+        { x: 300, y: 200, label: "Bắc Ninh" },
+        { x: 450, y: 150, label: "Hải Phòng" }
+    ];
+
+    markers.forEach(marker => {
+       
+        ctx.beginPath();
+        ctx.arc(marker.x, marker.y, 10, 0, Math.PI * 2, true);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.fillStyle = "black";
+        ctx.font = "12px Arial";
+        ctx.fillText(marker.label, marker.x + 12, marker.y + 4);
+    });
+</script>
+
+
+<footer>
+    <div class="footer-container">
+
+
+        <div class="footer-section  ">
+            <h4>Thương Hiệu & Hệ Thống Cửa Hàng</h4>
+        <ul>
+            <li><a href="">Về thương hiệu 360</a></li>
+            <li><a href="#">Hệ thống cửa hàng</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+        </ul>
+    </div>
+
+        <div class="footer-section">
+            <h4>Chính sách khách hàng</h4>
+            <ul>
+            <li><a href="#">Chính sách bảo mật thông tin</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+            <li><a href="#">Chính sách vận chuyển</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Dịch vụ khách hàng</h4>
+            <ul>
+            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+            <li><a href="#">Liên hệ với chúng tôi</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Kết nối với 360</h4>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+                <a href="#">Shopee</a>
+            </div>
+
+            <form class="newsletter">
+                <label for="subscribe">Đăng ký nhận tin từ 360</label>
+                <input type="text" id="subscribe" placeholder="Nhập SĐT của bạn">
+                <button>Đăng ký</button>
+            </form>
+
+            <div class="payment-methods">
+                <img src="./img/pay.svg" alt="Visa">
+                <img src="./img/bct.svg" alt="Bộ Công Thương">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Thời Trang 360 - All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+  <body>
+</html>
+    
